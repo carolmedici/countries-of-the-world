@@ -1,0 +1,48 @@
+.header{
+    background-color: rgb(116, 116, 118);
+    width: 100vw;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    top: 0;
+  
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .6rem 1rem;
+        
+        position: relative;
+        z-index: 0;
+    }
+
+    &__input{
+      
+      height: 2rem;
+      border-radius: 1rem;
+      color: rgb(43, 44, 43);
+      font-size: 1rem;
+      border: black;
+      background-color: rgb(216, 214, 214);
+      outline: 0;
+      position: relative;
+      right: -40rem;
+        padding: .5rem;
+      &::placeholder {
+        font-size: 1rem;
+      }
+    }
+    }
+
+    img{
+        width: 5rem;
+        margin-left: 7rem;
+    }
+
+    h1{
+        font-size: 3rem;
+        margin-left: 1rem;
+    }
