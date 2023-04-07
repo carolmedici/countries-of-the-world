@@ -1,5 +1,5 @@
 .header{
-    background-color: rgb(116, 116, 118);
+    background: linear-gradient(to left,  var(--header-color-1), var(--header-color-2), var(--header-color-3)) ;
     width: 100vw;
     height: 10rem;
     display: flex;
@@ -23,16 +23,19 @@
       
       height: 2rem;
       border-radius: 1rem;
-      color: rgb(43, 44, 43);
-      font-size: 1rem;
+      color: var(--input-color);
       border: black;
-      background-color: rgb(216, 214, 214);
+      background-color: var(--input-back-color);
       outline: 0;
       position: relative;
       right: -40rem;
-        padding: .5rem;
+      padding: .5rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+
       &::placeholder {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        color: var(--input-color);
       }
     }
     }
@@ -43,6 +46,7 @@
     }
 
     h1{
-        font-size: 3rem;
+        font-size: 4rem;
         margin-left: 1rem;
+        font-family: var(--title-font);
     }

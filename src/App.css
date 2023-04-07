@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@200;400;600&family=Delicious+Handrawn&display=swap');
+
+
 :root {
   max-width: 1280px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
  
+
+  /* colors*/
+  --input-color: #b4b7b4;
+  --input-back-color: #dbdbdb54;
+  --header-color-1: #4242ce;
+  --header-color-2: #248524;
+  --header-color-3: #c57f53;
+
+  /*fonts*/
+  --title-font: 'Delicious Handrawn', cursive;
+  --card-font: 'Anuphan', sans-serif;
 }
+
+
