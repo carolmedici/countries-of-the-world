@@ -17,7 +17,6 @@ const Cards = () => {
   }, []);
 
   return (
-
     <div className={style.container}>
       <div className={style.countries__cards}>
         {cards.map(card => (
