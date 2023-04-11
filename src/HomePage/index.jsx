@@ -1,39 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import Cards from "../Components/Countries/Cards";
 import Footer1 from "../Components/Footer1";
-import Countries from "../Components/Countries";
 import Tags from "../Components/Tags";
 import api from "../Components/services/api";
 
-
-
 const HomePage = () => {
+  const [cards, setCards] = useState([]);
   const [items, setItems] = useState([]);
-  const [regions, setRegions] = useState([]);
+  const [tags, setTags] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     api.get().then((response) => {
-      setRegions(response.data);
+      setCards(response.data);
       setItems(response.data);
+      setTags([...new Set(response.data.map((card) => card.region))]);
+    }).catch((err) => {
+      console.error("ERROR" + err)
     });
   }, []);
 
-  const tags = [...new Set(regions.map((region) => region.region))];
-
   const RegionFilter = (tag) => {
-    const newCards = regions.filter((region) => {
-      return region.region === tag;
-    });
-    setItems(newCards);
+    if (tag === "All") {
+      setItems(cards);
+    } else {
+      const filteredItems = cards.filter((card) => {
+        return card.region === tag;
+      });
+      setItems(filteredItems);
+    }
   };
 
   return (
     <>
       <Header />
       <section>
-        <Tags tags={tags} RegionFilter={RegionFilter} setItems={setItems} />
-        <Cards items={items} />
+        <Tags tags={tags} handleRegionFilter={RegionFilter} />
+        <Cards cards={items} />
       </section>
       <Footer1 />
     </>

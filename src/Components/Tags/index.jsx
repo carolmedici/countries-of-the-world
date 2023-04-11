@@ -13,7 +13,7 @@ const Tags = ({ tags, handleRegionFilter }) => {
             </li>
           );
         })}
-        <li onClick={() => handleRegionFilter("")}>All</li>
+        <li onClick={() => handleRegionFilter("All")}>All</li>
       </ul>
     </div>
   );
